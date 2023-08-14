@@ -1,0 +1,30 @@
+.side-item {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 0.875rem;
+  color: #000000;
+  text-decoration: none;
+  min-height: 40px;
+}
+.active-link {
+  background-color: #e0e0e0;
+}
+.side-item-icon {
+  background-size: contain;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  color: #222b45;
+}
+.side-item-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.5rem 0.7rem;
+  &.home {
+    padding-right: 0;
+  }
+}

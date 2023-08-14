@@ -1,0 +1,32 @@
+.kpi-container {
+  padding: 0 16px 0;
+  height: 100%;
+  width: 100%;
+  .kpi-main-number {
+    font-weight: 700;
+    font-size: 1.4rem;
+
+    margin: 5px;
+  }
+  .kpi-lines-container {
+    display: flex;
+    align-items: center;
+
+    .circle {
+      margin-inline-end: 0.5rem;
+      // background-color: rgb(226, 29, 72);
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .kpi-line-number {
+      margin: 5px 5px 5px 10px;
+      // margin-inline-end: 5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .kpi-line-title {
+      font-size: 0.75rem;
+    }
+  }
+}

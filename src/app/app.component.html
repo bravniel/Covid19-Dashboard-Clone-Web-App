@@ -1,0 +1,11 @@
+  <div class="sticky-header-and-sub-navbar">
+    <app-header (openSideBar)="onOpenSideNavBar()"></app-header>
+    <app-side-navbar
+      (closeSideBar)="onCloseSideNavBar()"
+      [isSideNavBarOpen]="isSideNavBarOpen"
+    ></app-side-navbar>
+  </div>
+  <router-outlet></router-outlet>
+<!-- [isSideNavBarOpen]="isSideNavBarOpen"
+*ngIf="isSideNavBarOpen"
+-->

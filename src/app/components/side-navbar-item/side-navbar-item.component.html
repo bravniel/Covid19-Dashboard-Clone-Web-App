@@ -1,0 +1,37 @@
+<a
+  class="side-item"
+  [routerLink]="optionItem.route"
+  routerLinkActive="active-link"
+  *ngIf="optionItem.route"
+  (click)="navigateTo(optionItem.route)"
+>
+  <img
+    *ngIf="optionItem.iconPath"
+    class="side-item-icon"
+    [src]="'assets/' + optionItem.iconPath"
+    [alt]="optionItem.alt"
+  />
+  <span
+    class="side-item-title"
+    [ngClass]="{ home: optionItem.label == 'עמוד הבית' }"
+    >{{ optionItem.label }}</span
+  >
+</a>
+
+<a
+  class="side-item"
+  *ngIf="!optionItem.route"
+  (click)="navigateTo('/dashboard')"
+>
+  <img
+    *ngIf="optionItem.iconPath"
+    class="side-item-icon"
+    [src]="'assets/' + optionItem.iconPath"
+    [alt]="optionItem.alt"
+  />
+  <span
+    class="side-item-title"
+    [ngClass]="{ home: optionItem.label == 'עמוד הבית' }"
+    >{{ optionItem.label }}</span
+  >
+</a>

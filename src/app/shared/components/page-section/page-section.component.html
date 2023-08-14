@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="section-header">
+    <span class="section-title">{{ section.label }}</span>
+    <app-section-links-dropdown
+      [sectionLinks]="sectionLinks"
+    ></app-section-links-dropdown>
+  </div>
+  <!-- <ng-template></ng-template> -->
+  <ng-content></ng-content>
+</div>

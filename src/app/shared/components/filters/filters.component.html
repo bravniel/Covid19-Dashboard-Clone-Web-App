@@ -1,0 +1,62 @@
+<div class="filters-dropdown-container">
+  <div class="filters-dropdown-button" (click)="toggleFilteringDropdown()">
+    <span class="filters-dropdown-label" [attr.dir]="'rtl'">{{
+      selectedValues
+    }}</span>
+    <div
+      class="dropdown-arrow"
+      [ngClass]="isFilteringOptionOpen ? 'up' : 'down'"
+    ></div>
+  </div>
+  <div class="filters-dropdown-items-container" *ngIf="isFilteringOptionOpen">
+    <ng-container *ngIf="getSearchOptions().option.length > 0">
+      <app-search-with-options
+        [searchItems]="getSearchOptions().option"
+        [selectedItems]="selectedItems"
+        (selectedItemsChange)="onSelectedItemsChange($event)"
+        [isSearchDropdownOpen]="isSearchDropdownOpen"
+        (inputClick)="onSearchInputClick()"
+        [searchPlaceholder]="getSearchOptions().searchPlaceholder"
+        [inputType]="getSearchOptions().type"
+        [search]="getSearchOptions().all"
+      ></app-search-with-options>
+      <span class="search-checked-count-label" *ngIf="selectedItems.length > 0 && getSearchOptions().type != 'text'">
+        {{ selectedItems.length }} {{getSearchOptions().searchPlaceholderForFilter}} נבחרו
+      </span>
+      <span *ngIf="selectedItems.length == 0">&nbsp;</span>
+    </ng-container>
+
+    <div class="filters-dropdown-options-container">
+      <div *ngFor="let section of filterOptions; let last = last">
+        <ng-container *ngIf="!section.isCanSearch">
+          <h4>{{ section.section }}</h4>
+          <div *ngIf="section.type === 'checkbox'">
+            <div *ngFor="let option of section.options">
+              <label>
+                <input type="checkbox" [(ngModel)]="option.isChecked" />
+                {{ option.label }}
+              </label>
+            </div>
+          </div>
+          <div *ngIf="section.type === 'radio'">
+            <div *ngFor="let option of section.options">
+              <label>
+                <input
+                  type="radio"
+                  [(ngModel)]="section.selectedItem"
+                  [value]="option.value"
+                />
+                {{ option.label }}
+              </label>
+            </div>
+          </div>
+        </ng-container>
+        <hr *ngIf="!last && !section.isCanSearch" />
+      </div>
+    </div>
+    <div class="dropdown-buttons">
+      <button (click)="applySelection()">אישור</button>
+      <button (click)="cancelSelection()">ביטול</button>
+    </div>
+  </div>
+</div>

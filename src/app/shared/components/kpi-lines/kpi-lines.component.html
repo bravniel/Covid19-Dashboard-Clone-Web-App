@@ -1,0 +1,37 @@
+<div class="kpi-container">
+  <div *ngIf="mainNumber !== -1" class="kpi-main-number">
+    {{ this.mainNumber }}{{ this.subDataLinesVisualSettingsAndData.isHeaderNumberHasPercentageIcon ? "%" : "" }}
+  </div>
+  <!-- <div class="kpi-lines"> -->
+  <div
+    *ngFor="let option of this.subDataLines; let i = index"
+    class="kpi-lines-container"
+    [style.flex-direction]="this.subDataLinesVisualSettingsAndData.isTitleFirstInLine ? 'row-reverse' : 'row'"
+        [style.justify-content]="this.subDataLinesVisualSettingsAndData.isTitleFirstInLine ? 'flex-end' : 'flex-start'"
+
+  >
+    <div class="kpi-line-number" [style.font-size.rem]="this.subDataLinesVisualSettingsAndData.lineNumberFontSize">
+      {{ this.option.lineNumber
+      }}{{
+        this.subDataLinesVisualSettingsAndData.subDataLines[i]
+          .isLineNumberHasPercentageIcon
+          ? "%"
+          : ""
+      }}
+    </div>
+    <div class="kpi-line-title" [style.font-size.rem]="this.subDataLinesVisualSettingsAndData.lineTitleFontSize">
+      {{ this.subDataLinesVisualSettingsAndData.subDataLines[i].lineTitle }}
+    </div>
+    <span
+      *ngIf="
+        this.subDataLinesVisualSettingsAndData.subDataLines[i].isHasCircleIcon
+      "
+      class="circle"
+      [ngStyle]="{
+        'background-color':
+          this.subDataLinesVisualSettingsAndData.subDataLines[i].circleIconColor
+      }"
+    ></span>
+  </div>
+  <!-- </div> -->
+</div>

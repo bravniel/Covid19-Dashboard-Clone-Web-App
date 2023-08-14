@@ -1,0 +1,40 @@
+<!-- <div class="search-container"> -->
+<input
+  type="text"
+  [placeholder]="'חיפוש ' + searchPlaceholder"
+  (click)="onInputClicked()"
+  class="search-input"
+  (input)="onSearchInput($event)"
+  [(ngModel)]="searchInputValue"
+/>
+<div class="dropdown-list-container" *ngIf="isSearchDropdownOpen">
+  <div class="dropdown-list">
+    <ng-container *ngIf="inputType != 'text'">
+      <div *ngFor="let item of this.filteredItems" class="dropdown-item">
+        <label class="checkbox-label">
+          <input
+            [type]="inputType"
+            [checked]="item.isChecked"
+            (change)="onItemCheckboxChange($event, item)"
+          />
+          {{ item.label }}
+        </label>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="inputType == 'text'">
+      <div *ngFor="let item of this.search?.options" class="dropdown-item">
+        <label class="checkbox-label">
+          <input
+            type="radio"
+            [(ngModel)]="this.search!.selectedItem"
+            [value]="item.value"
+            (change)="onItemRadioChange(item)"
+            class="custom-radio-input"
+          />
+          {{ item.label }}
+        </label>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- </div> -->

@@ -1,0 +1,200 @@
+<app-page-section
+  #section.link
+  [sectionLinks]="sectionLinks"
+  [section]="section"
+>
+  <div class="row">
+    <app-card
+      *ngFor="let option of this.viewOnYesterdayData; let i = index"
+      class="card"
+      [isCardHasMoreOptionsBtn]="false"
+      [cardData]="option"
+      [cardVisualSettingsAndData]="
+        getObjectOfVisualSettingsAndDataForCardInYesterday(option.cardId)
+      "
+    >
+      <app-kpi-lines
+        [mainNumber]="option.headerNumber"
+        [subDataLines]="option.subDataLines"
+        [subDataLinesVisualSettingsAndData]="
+          getObjectOfVisualSettingsAndDataForCardInYesterday(option.cardId)
+        "
+      ></app-kpi-lines>
+    </app-card>
+    <!-- <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+    <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+    <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+    <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+    <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card> -->
+  </div>
+  <div class="summary-of-last-7-days">
+    <h3>סיכום 7 ימים אחרונים</h3>
+    <div class="row">
+      <app-card
+        *ngFor="
+          let option of this.viewOnSummaryOfTheLast7DaysData;
+          let i = index
+        "
+        class="card"
+        [isCardHasMoreOptionsBtn]="false"
+        [cardData]="option"
+        [cardVisualSettingsAndData]="
+          getObjectOfVisualSettingsAndDataForCardInSummaryOfTheLast7Days(
+            option.cardId
+          )
+        "
+      >
+        <app-kpi-lines
+          [mainNumber]="option.headerNumber"
+          [subDataLines]="option.subDataLines"
+          [subDataLinesVisualSettingsAndData]="
+            getObjectOfVisualSettingsAndDataForCardInSummaryOfTheLast7Days(
+              option.cardId
+            )
+          "
+        ></app-kpi-lines>
+      </app-card>
+      <!-- <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+      <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+      <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card>
+      <app-card class="card" [isCardHasMoreOptionsBtn]="false"></app-card> -->
+    </div>
+  </div>
+</app-page-section>
+
+<!-- <app-card>
+      <app-filters [filterOptions]="filterOptions"></app-filters>
+      <app-legend></app-legend>
+      <app-table [columns]="tableColumns" [data]="tableData" [items]="columnSettings_1"></app-table>
+    </app-card> -->
+
+<!-- type Statistics = {
+  yesterday: {
+    title: string;
+    numberOfNewVerifiedYesterday: number;
+    numberOfNewVerifiedToday: number;
+    totalNumberOfVerified: number;
+  }[];
+
+  summaryOfTheLast7Days: {
+    title: string;
+    amount: number;
+    percentageChange: number;
+  }[];
+};
+
+const statisticsViewOn = {
+  yesterday: [
+    {
+      cardId: "verifiedYesterday",
+      headerTitle: "verified yesterday",
+      headerNumber: numberOfNewVerifiedYesterday,
+      moreData: [{
+        lineId: "numberOfNewVerifiedToday",
+        lineTitle: "number Of New Verified Today",
+        lineNumber: numberOfNewVerifiedToday,
+      },
+      {
+        lineId: "totalNumberOfVerified",
+        lineTitle: "total Number Of Verified",
+        lineNumber: totalNumberOfVerified,
+      }
+      ],
+    },
+    {
+      title: "active patients",
+      totalNumberOfActivePatients: 0,
+      numberOfActivePatientsHospitalized: 0,
+    },
+    {
+      title: "Serious patients",
+      numberOfHospitalizedPatientsInSevereAndCriticalCondition: 0,
+      numberOfHospitalizedPatientsInCriticalCondition: 0,
+      numberOfHospitalizedPatientsConnectedToACMO: 0,
+      numberOfHospitalizedPatientsVentilated: 0,
+      numberOfHospitalizedPatientsInModerateCondition: 0,
+      numberOfHospitalizedPatientsInMildCondition: 0,
+    },
+    {
+      title: "get vaccinated",
+      numberOfPeopleGetVaccinatedInFirstDose: 0,
+      numberOfPeopleGetVaccinatedInSecondDose: 0,
+      numberOfPeopleGetVaccinatedInThirdDose: 0,
+      numberOfPeopleGetVaccinatedInFourthDose: 0,
+      numberOfPeopleGetVaccinatedInOmicron: 0,
+    },
+    {
+      title: "Cumulative solvers",
+      numberOfCumulativeSolvers: 0,
+    },
+    {
+      title: "The percentage of positive tests yesterday",
+      percentageOfPositiveTestsYesterday: 0,
+      numberOfNewTestsForVirusDetectionYesterday: 0,
+      totalNumberOfTestsYesterday: 0,
+    },
+  ],
+  summaryOfTheLast7Days: [
+    {
+      title: "the number of verified people",
+      amountOfVerifiedPeople: 0,
+      percentageChangeFromPreviousSevenDays: 0,
+    },
+    {
+      title: "number of serious patients",
+      amountOfSeriousPatients: 0,
+      percentageChangeInSeriousPatients: 0,
+    },
+    {
+      title: "Amount of new patients hospitalized in serious and critical condition",
+      amountOfNewPatientsHospitalizedInSeriousAndCriticalCondition: 0,
+      percentChangeInNewPatientsHospitalized: 0,
+    },
+    {
+      title: "Number of deaths",
+      amountOfDeaths: 0,
+      percentChangeInDeaths: 0,
+    },
+    {
+      title: "Number of subjects",
+      amountOfNewSubjectsForVirusDetection: 0,
+      percentChangeInNewSubjects: 0,
+      percentOfPositiveSubjects: 0,
+    },
+  ],
+}; -->
+
+<!-- statistics = {
+  yesterday: [
+    {title: "verified yesterday", numberOfNewNerifiedYesterday: , numberOfNewVerifiedToday: , totalNumberOfVerified: },
+    {title: "active patients", total number of active patients: , number of active patients hospitalized: },
+    {title: "Serious patients", number of hospitalized patients in severe and
+critical condition: , number of hospitalized patients in critical condition: ,number of hospitalized patients connected to ACMO: ,number of hospitalized
+patients who are ventilated: ,number of hospitalized patients in moderate
+condition: ,number of hospitalized patients in mild condition:},
+    {title: "Get vaccinated", number get vaccinated in first dose: , number get vaccinated in second dose: ,
+number get vaccinated in third dose: , number get vaccinated in fourth dose: ,
+number get vaccinated in Omicron: },
+    {title: "Cumulative solvers", number of cumulative
+solvers: },
+    {title: "The percentage of positive tests yesterday", the percentage of the
+number of positive tests yesterday: , the number of new tests for the detection of
+the virus yesterday: , the total number of tests yesterday: },
+  ],
+  summaryOfTheLast7Days:[
+    {title: "the number of verified people", the amount of the number of verified
+people: , percentage change from the previous seven days: },
+    {title: "Number of serious
+patients", : , : },
+    {title: "", amount of new patients hospitalized in serious and critical condition
+in the last week: , percent change in number of new patients hospitalized in
+serious and critical condition from the week before: },
+    {title: "Number of deaths", amount of
+number of deaths in the last week: , percent change in number of deaths from the
+previous week: },
+    {title: "Number of subjects", amount of number of new subjects for the
+detection of the virus in the last week: , percentage of number of changes in the
+number of new subjects for the detection of the virus compared to a week ago: ,
+percentage of the number of subjects who tested positive out of the number of
+new subjects in the last week: },  ]
+}; -->

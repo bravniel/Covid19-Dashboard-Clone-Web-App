@@ -1,0 +1,18 @@
+<div
+  class="side-nav-bar-container"
+  [ngClass]="{ open: isSideNavBarOpen }"
+  (click)="onClick()"
+></div>
+
+<div class="side-nav" [ngClass]="{ open: isSideNavBarOpen }">
+  <button class="close-btn" (click)="onClick()"></button>
+  <ng-container *ngFor="let sectionGroup  of sideNavData">
+    <ng-container *ngFor="let section of sectionGroup">
+      <ul class="side-nav-items" [ngClass]="{home: section.id == 'firstDiv'}">
+        <li *ngFor="let option of section.options">
+          <app-side-navbar-item [optionItem]="option" (closeSideBar)="onClick()"></app-side-navbar-item>
+        </li>
+      </ul>
+    </ng-container>
+  </ng-container>
+</div>

@@ -1,0 +1,122 @@
+.link-container {
+  display: flex;
+  padding: 8px;
+  // box-sizing: border-box;
+  cursor: pointer;
+}
+.item-pic {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  margin: auto 0;
+  background-size: cover;
+}
+.link-data-container {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.item-title {
+  font-size: 14px;
+  color: #222b45;
+  font-weight: 700;
+}
+.item-description {
+  font-weight: 400;
+  font-size: 12px;
+  margin: 0;
+  color: #222b45;
+  text-align: start;
+}
+.item-link {
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+  color: #308bf6;
+  text-decoration: underline;
+  text-align: start;
+}
+.blueEarth {
+  background-image: url("~src/assets/images/internet.png");
+
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+.exelPic {
+  background-image: url("~src/assets/images/excel.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+// @media (max-width: 450px) {
+//   }
+
+// .greenEarth {
+//   background-image: url("../../../assets/images/greenEarth.png");
+//   height: 100px;
+//   width: 100px;
+// }
+
+// .orangeEarth {
+//   background-image: url("../../../assets/images/orangeEarth.png");
+//   height: 100px;
+//   width: 100px;
+// }
+// .purpleIsrael {
+//   background-image: url("../../../assets/images/purpleIsrael.png");
+//   height: 100px;
+//   width: 100px;
+// }
+// .orangeIsrael {
+//   background-image: url("../../../assets/images/orangeIsrael.png");
+//   height: 100px;
+//   width: 100px;
+// }
+// .labPic {
+//   background-image: url("../../../assets/images/labPic.png");
+//   height: 100px;
+//   width: 100px;
+// }
+// .littlePurpleIsrael {
+//   background-image: url("../../../assets/images/littlePurpleIsrael.png");
+//   height: 100px;
+//   width: 100px;
+// }
+// .exelPic {
+//   background-image: url("../../../assets/images/exelPic.png");
+//   height: 100px;
+//   width: 100px;
+// }
+// .blueIsrael {
+//   height: 100px;
+//   width: 100px;
+//   background: url("../../../assets/images/blueIsrael.png");
+// }
+
+// .turkizIsrael {
+//   height: 100px;
+//   width: 100px;
+//   background: url("../../../assets/images/turkizIsrael.png");
+// }
+
+// .greenIsrael {
+//   height: 100px;
+//   width: 100px;
+//   background: url("../../../assets/images/greenIsrael.png");
+// }
+
+// .background-dark-mode {
+//   background: #384f5f;
+//   color: #fff;
+// }
+
+// @media (min-width: 769px) {
+//   .link {
+//     width: 32vw;
+//   }
+//   .description {
+//     width: 20vw;
+//     overflow: hidden;
+//   }
+// }

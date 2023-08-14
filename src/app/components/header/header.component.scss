@@ -1,0 +1,123 @@
+.colorfull-line {
+  height: 3px;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  background: linear-gradient(90deg, #4bb887, #16b6d0, #d6e58a);
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  min-height: 47px;
+  width: 100vw;
+  position: relative;
+  background: #fff;
+  flex-wrap: wrap;
+  padding: 14px 10px 13px 29px;
+  align-items: center;
+  @media (max-width: 790px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+  }
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  // margin-left: 1rem;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1 1 auto;
+  margin-left: 1.8rem;
+  margin-right: 1.2rem;
+  @media (max-width: 790px) {
+    margin-right: 0;
+  }
+}
+.update-data-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 1.5rem;
+}
+.icons-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 0.5rem;
+  @media (max-width: 790px) {
+    position: absolute;
+    left: 29px;
+    top: 1rem;
+    align-items: start;
+  }
+}
+.logo {
+  background: url("~src/assets/images/logo.svg");
+  height: 47px;
+  width: 131.3px;
+  background-size: cover;
+}
+.hamburger-btn {
+  background: url("~src/assets/images/menu.svg") no-repeat;
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  color: #222b45;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+.title {
+  font-size: 1.5rem;
+  color: #222b45;
+  font-weight: 700;
+  @media (max-width: 445px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 420px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 394px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 368px) {
+    font-size: 1.1rem;
+  }
+  @media (max-width: 343px) {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}
+.update-date-and-time {
+  font-size: 0.875rem;
+  color: #5f7280;
+  white-space: nowrap;
+}
+.sun {
+  height: 34px;
+  width: 34px;
+  background-size: cover;
+  border: none;
+  background: url("~src/assets/images/theme-mode.svg") no-repeat;
+  cursor: pointer;
+  color: #222b45;
+}
+.language-icon {
+  background: url("~src/assets/images/switch-language.svg") no-repeat;
+  background-size: contain;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  color: #222b45;
+  position: relative;
+  @media (max-width: 790px) {
+    margin-top: 6px;
+  }
+}

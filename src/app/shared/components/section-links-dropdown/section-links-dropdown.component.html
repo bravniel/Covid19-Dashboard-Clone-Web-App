@@ -1,0 +1,19 @@
+<div class="links-dropdown-container" (mouseleave)="closeLinksDropdown()">
+  <div class="links-dropdown-button" (click)="toggleLinksDropdown()">
+    <span>לינקים בנושא</span>
+    <div class="dropdown-arrow-down"></div>
+  </div>
+  <div
+    class="links-dropdown-items-container"
+    *ngIf="isLinksOptionsOpen"
+    (mouseenter)="openLinksDropdown()"
+  >
+    <ng-container *ngFor="let link of sectionLinks">
+      <app-section-links-dropdown-item
+        [linkItem]="link"
+      ></app-section-links-dropdown-item>
+    </ng-container>
+  </div>
+</div>
+
+<!-- class="dropdown-title" -->

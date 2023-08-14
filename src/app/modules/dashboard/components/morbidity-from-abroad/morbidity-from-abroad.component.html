@@ -1,0 +1,22 @@
+<app-page-section
+  #section.link
+  [sectionLinks]="sectionLinks"
+  [section]="section"
+>
+  <div class="row">
+    <app-card class="card"></app-card>
+    <app-card class="card"></app-card>
+    <app-card class="card">
+      <div class="card-body">
+        <app-filters [filterOptions]="filterOptions" [allDataLangth]="tableData.length"></app-filters>
+        <app-legend [items]="legendSettings"></app-legend>
+        <app-table
+          class="card-table"
+          [columns]="tableColumns"
+          [data]="tableData"
+          [items]="columnSettings"
+        ></app-table>
+      </div>
+    </app-card>
+  </div>
+</app-page-section>

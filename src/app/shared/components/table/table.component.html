@@ -1,0 +1,41 @@
+<div class="table">
+  <div class="table-header">
+    <div
+      class="table-cell"
+      *ngFor="let column of columns"
+      (click)="sortData(column.value)"
+      [ngClass]="getSortIndicatorClass(column.value)"
+    >
+      <span class="header-cell-title">
+        {{ column.label }}
+        <span class="sort-indicator"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="rows-container">
+    <!-- <div class="table-scroll"> -->
+      <div class="table-body">
+        <div class="table-row" *ngFor="let row of sortedData">
+          <div
+            class="table-cell"
+            *ngFor="let column of columns; let first = first"
+          >
+            <app-percentage-bar
+              *ngIf="isCellNeedContainBar(column.value)"
+              [percentage]="row[column.value]"
+            ></app-percentage-bar>
+            <div
+              [ngClass]="getCellStyleClass(column.value, first)"
+              [style.background-color]="getCellColor(column.value, row[column.value])"
+            >
+              <span *ngIf="isCellNeedContainContent(column.value)">{{row[column.value]}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+<!-- {{a | percent}} -->

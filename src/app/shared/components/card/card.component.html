@@ -1,0 +1,63 @@
+<div class="card-container">
+  <div class="card-header">
+    <!-- <span class="card-title">מאומתים אתמול</span> -->
+        <span class="card-title">{{this.cardTitle}}</span>
+    <div class="card-info-container">
+      <div class="card-info-icon"></div>
+      <div class="info-container">
+        {{this.cardInfo}}
+      </div>
+    </div>
+    <div
+      *ngIf="isCardHasMoreOptionsBtn"
+      class="more-options-container"
+      (mouseleave)="closeInformationContainer()"
+      (click)="toggleInformationContainer()"
+    >
+      <div class="more-options-icon"></div>
+      <div
+        class="more-options-data-container"
+        *ngIf="isInformationOpen"
+        (mouseenter)="openInformationContainer()"
+      >
+        <div
+          class="more-options-data-item"
+          *ngFor="let option of CardMoreOptions; let i = index"
+        >
+          <div class="option-item-icon">
+            <div
+              class="share"
+              [ngClass]="{
+                share: option.pictureClass == 'share',
+                download: option.pictureClass == 'download'
+              }"
+            ></div>
+          </div>
+          <div class="option-item-text">{{ option.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="body"><ng-content></ng-content></div>
+</div>
+
+<!-- <div class="content">
+  <h5>{{ cardData?.title?.value }}</h5>
+  <span *ngFor="let stat of cardData?.stats">
+    <span class="bold">
+      {{ stat.value }}
+    </span>
+    <span>
+      {{ stat.title }}
+    </span>
+  </span>
+</div> -->
+
+<!--
+    [ngStyle]="{ width: this.carddWidth, height: this.cardHeight }"
+
+  {{ cardData?.title?.title }}
+  {{ cardData?.tooltip }}
+
+
+-->

@@ -1,0 +1,9 @@
+<li
+  class="dashboad-navbar-item"
+  [ngClass]="{ 'active-section': activeComponentName == section.link }"
+>
+  <a href="#{{ section.link }}">{{ section.label }}</a>
+</li>
+
+<!-- (click)="scrollToSection(section.link)"
+    [class.active]="isSectionActive(section.link)" -->

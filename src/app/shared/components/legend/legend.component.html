@@ -1,0 +1,21 @@
+<div class="legend-container">
+  <ul>
+    <li *ngFor="let item of items" class="legend-item">
+      <div class="legend-icon">
+        <span
+          [ngClass]="item.iconStyle"
+          [style.background-color]="item.iconColor"
+        ></span>
+      </div>
+      <div class="legend-text-container">
+        <div class="legend-description">{{ item.descriptionText }}</div>
+        <div
+          class="legend-detailed-description"
+          *ngIf="item.detailedDescriptionText"
+        >
+          {{ item.detailedDescriptionText }}
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

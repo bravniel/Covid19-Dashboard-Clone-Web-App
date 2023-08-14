@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+// --card-background-color: #ffffff;
+// --text-basic-color: #222b45;
+// --banner-background-color: #e6f1f4;
+// --select-outline-basic-border-color: #e4e9f2;
+// --select-outline-basic-text-color: #222b45;
+// --select-round-border-radius: 1.5rem;
+// --select-outline-border-style: solid;
+// --filter-button-background-color: #f7f9fc;
+// --select-outline-border-width: 1px;
+// --card-margin-bottom: 20px;
+// --card-header-text-font-family: Open Sans Hebrew;
+// --card-shadow: none;
+// --card-header-text-color: #222b45;
+// --card-header-text-font-weight: 600;
+// --card-divider-color: #d8d8d9;
+// --layout-text-color: #222b45;
+// --card-padding: 16px;
+// --tooltip-border-width: 1px;
+// --tooltip-border-style: solid;
+// --tooltip-border-color: #ffffff;
+// --layout-window-mode-background-color: #f8fafd;
+// --action-link: #308bf6;
+// --btn-bg-color: #d5e0f4;
+// --btn-border-color: #c3cacf;
+// --tree-grid-header-background-color: #e6f1f3;
+
+@use "./styles/variables";
+
+* {
+  // font-family: "Assistant", sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  // text-align: right;
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+
+  -webkit-locale: "he"; /* Set the locale to Hebrew */
+  // direction: rtl; /* Set the text direction to right-to-left */
+  unicode-bidi: isolate; /* Isolate the text for correct bidirectional rendering */
+  overflow: hidden; /* Hide any overflow content */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #adadad;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}

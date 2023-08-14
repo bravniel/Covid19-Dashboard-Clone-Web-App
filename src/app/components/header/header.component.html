@@ -1,0 +1,34 @@
+<div class="colorfull-line"></div>
+<div class="header-container">
+  <div class="logo-container">
+    <!-- <div (click)="toggleSideMenu()" class="hamburger-btn"></div> -->
+    <div (click)="onClick()" class="hamburger-btn"></div>
+    <div class="logo"></div>
+  </div>
+  <div class="title-container">
+    <span class="title">עולם הדאטה - נגיף הקורונה בישראל</span>
+  </div>
+  <div class="update-data-container">
+    <span class="update-date-and-time">עדכון אחרון: {{this.date | date:"dd/M/yyyy HH:mm"}}</span>
+    <!-- | date:"dd/M/yyyy HH:mm" -->
+  </div>
+  <div class="icons-container">
+    <div
+      class="language-icon"
+      (click)="toggleLanguageDropdown()"
+      (mouseleave)="closeLanguageDropdown()"
+    >
+      <!-- <app-language-dropdown
+          [isOpen]="isLanguageOptionsOpen"
+          (toggle)="toggleLanguageDropdown()"
+        ></app-language-dropdown> -->
+      <app-language-dropdown
+        (mouseenter)="openLanguageDropdown()"
+        [@show]
+        *ngIf="isLanguageOptionsOpen"
+      ></app-language-dropdown>
+    </div>
+
+    <button (click)="toggleMode()" class="sun"></button>
+  </div>
+</div>

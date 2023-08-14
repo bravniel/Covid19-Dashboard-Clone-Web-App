@@ -1,0 +1,11 @@
+<div class="dashboad-navbar-container">
+  <!-- <ul> -->
+    <app-dashboard-navbar-item
+      *ngFor="let section of sections; let i = index"
+      [section]="section"
+      [activeComponentName]="activeComponentName"
+    >
+    </app-dashboard-navbar-item>
+  <!-- </ul> -->
+</div>
+<!-- (click)="scrollToClickedComponent(section)" -->
